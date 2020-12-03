@@ -141,8 +141,8 @@ echo pause > nul >> Kill_Hacking.bat
 
 
 
-:out
+:amora
 msg * System broke
-goto out
+goto amora
 
 pause > nul

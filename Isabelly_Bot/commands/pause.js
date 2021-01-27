@@ -5,7 +5,8 @@ const execute = (bot, msg, args) => {
       return msg.channel.send(`⚠️ ${msg.author.username}, não ah música alguma sendo reproduzida!!`);
     }
     queue.dispatcher.pause();
-    msg.channel.send(`▶️ ${msg.author.username}, estou pausando a reprodução das músicas!`)
+    const emoji1 = bot.emojis.cache.get("803678268666413156")
+    msg.channel.send(`${emoji1} A música que estava sendo reproduzida foi pausada!`)
 };
 
 

@@ -31,8 +31,20 @@ bot.once('ready', () => {
     console.log('==================================@@@@@==================================');
     console.log('=============== Estou Pronta Para Ser Usada! Bot:Isabelly ===============');
     console.log('==================================@@@@@==================================');
-    bot.user.setActivity('NBA Finals - Lakers vs Heat', {type:"WATCHING"});
+    let atividade_do_bot = [
+        `🔧Estou em Manutenção!🔧`,
+        `🟡 =ajuda 🟡`,
+        `🛩️Sendo util para ${bot.guilds.cache.size} servidores!🛩️`,
+    ],
+    i = 0;
+    setInterval(() => bot.user.setActivity(`${atividade_do_bot[i++ % atividade_do_bot.length]}`, {
+        type: "COMPETING"
+    }), 5000);
+        bot.user
+            .setStatus("idle")
+            .catch(console.log);
 });
+
 
 
 // Criando evento mensagem, onde o bot se nn reconhecer o comando responderá de uma outra forma.
@@ -45,7 +57,7 @@ bot.on("message", (msg) => {
     try {
         bot.commands.get(command).execute(bot,msg,args);
     } catch(e) {
-        return msg.channel.send(`${msg.author.username}, infelizmente não consigo capturar nenhum comando associado ao que foi dito. Se não lembra bem de um você achará oque precisa com o comando "=ajuda".`);
+        return msg.channel.send(`${msg.author.username}, não reconheço esse comando ai... Acho que você achará oque precisa em "=ajuda"`);
     }
 });
 

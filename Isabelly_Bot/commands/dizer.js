@@ -1,15 +1,28 @@
-// Início ao comando dizer onde a isabelly irá repetir oque o usuario quiser
+// Puxando informações sobre o discord
 const Discord = require('discord.js');
 
-// Início ao desenvolvimento do comando dizer!
+
+// Inicio ao desenvolvimento do comando de repetição!
 const execute = (bot,msg,args) => {
-    msg.channel.send(args);
+    if (!msg.member.hasPermission(['MANAGE_MESSAGES', 'ADMINISTRATOR'])) { return msg.channel.send(`${msg.author.username}, infelizmente você não tem permissão para executar esse comando. 😖`) }
+
+    let argsresult
+    const mChannel = msg.mentions.channels.first()
+
+    msg.delete()
+    if (mChannel) {
+      argsresult = args.slice(1).join(' ')
+      mChannel.send(argsresult)
+    } else {
+      argsresult = args.join(' ')
+      msg.channel.send(argsresult)
+    }
 }
 
-
-// Aba para o module exports. Informações.
+// As informações abaixo compreendem name, help e a parte de execução
+// Informações do comando!
 module.exports ={
-    name: "d",
-    help: "Repete informações",
+    name: "diga",
+    help: "Faz o Bot repetir a msg anterior!",
     execute,
 }

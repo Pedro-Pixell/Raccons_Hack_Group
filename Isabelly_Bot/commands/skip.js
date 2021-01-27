@@ -9,7 +9,7 @@ const execute = (bot, msg, args) => {
   queue.songs.shift();
   bot.queues.set(msg.guild.id, queue);
   playSong(bot, msg, queue.songs[0]);
-  msg.channel.send(`⏭ ${msg.author.username}, estou pulando a música atual! Que venha próxima música!!`)
+  msg.channel.send(`⏭️ Estou pulando a música atual! Que venha a próxima música!!`)
 };
 
 

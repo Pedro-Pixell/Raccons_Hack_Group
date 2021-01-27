@@ -7,7 +7,7 @@ const execute = (bot, msg, args) => {
     queue.songs = [];
     bot.queues.set(msg.guild.id, queue);
     queue.dispatcher.end();
-    msg.channel.send(`⏹ ${msg.author.username}, estou parando definitivamente essa música!`)
+    msg.channel.send(`⏹️ Estou parando definitivamente essa música!`)
   };
   
 

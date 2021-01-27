@@ -12,7 +12,7 @@ const execute = (bot,msg,args) => {
 // Caso algo dê errado certificar que seja apresentado corretamente no terminal
     try {
         msg.channel.bulkDelete(mensagemDeletar);
-        msg.channel.send(`📂 Eu limpei exatamente ${mensagemDeletar} mensagens! 📂`);
+        msg.channel.send(`📂 Eu limpei exatamente ${mensagemDeletar} mensagens a pedido de ${msg.author.username}. 📂`);
     } catch(e){
         console.log(e);
     }

@@ -7,6 +7,7 @@ const execute = (bot,msg,args) => {
         let embed = new Discord.MessageEmbed()
     
         .setTimestamp()
+        .setThumbnail("https://3.bp.blogspot.com/-jDRjJx7Vb-E/UkzKaHIXFLI/AAAAAAAAN6w/-48_p_uAtPI/s1600/gif+%252837%2529.gif")
         .setTitle(`Salve ${msg.author.username}! Meu nome é Isabelly! \nNeste campo te apresento minhas funções!`)
         .setColor("#e2fd16")
         .setDescription(`⚙️ Lembre-se que meu prefixo é :"=" ⚙️`)
@@ -14,7 +15,9 @@ const execute = (bot,msg,args) => {
         .addField(`💡 =sinfo`, "Nesse comando apresento informações sobre este servidor!", true)
         .addField(`💡 =uinfo`, "Nesse comando apresento informações sobre você!", true)
         .addField(`💡 =minfo`, "Aqui apresento informações sobre os comandos de música!", true)
-        .addField(`💡 =isabelly`, "Aqui apresento algumas informações sobre mim!", true);
+        .addField(`💡 =Isabelly`, "Aqui apresento algumas informações sobre mim!", true)
+        .addField(`💡 =avatar <@Usuário>`, "Mostra o avatar do Usuário mencionado!", true)
+        .setFooter(`@${msg.author.username}, os comandos que você desejar utilizar precisam ser semelhantes aos que foram expostos acima!`);
     
         msg.channel.send(embed);
 }
